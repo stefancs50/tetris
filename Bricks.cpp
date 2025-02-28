@@ -12,7 +12,7 @@ QuadBrick::QuadBrick(){
 
 LBrick::LBrick(){
     offset_x = 4;
-    offset_y = 1;
+    offset_y = -1;
     pixels[0].push_back(Pixel{ 1, 0, 2 });
     pixels[0].push_back(Pixel{ 1, 1, 2 });
     pixels[0].push_back(Pixel{ 1, 2, 2 });
@@ -36,18 +36,50 @@ LBrick::LBrick(){
 
 ZBrick::ZBrick(){
     offset_x = 4;
-    pixels[0].push_back(Pixel{ 0, 0, 3 });
-    pixels[0].push_back(Pixel{ 0, 1, 3 });
+    offset_y = -1;
+    pixels[0].push_back(Pixel{ 1, 0, 3 });
     pixels[0].push_back(Pixel{ 1, 1, 3 });
-    pixels[0].push_back(Pixel{ 1, 2, 3 });
+    pixels[0].push_back(Pixel{ 2, 1, 3 });
+    pixels[0].push_back(Pixel{ 2, 2, 3 });
+
+    pixels[1].push_back(Pixel{ 0, 1, 3 });
+    pixels[1].push_back(Pixel{ 1, 0, 3 });
+    pixels[1].push_back(Pixel{ 1, 1, 3 });
+    pixels[1].push_back(Pixel{ 2, 0, 3 });
+
+    pixels[2].push_back(Pixel{ 0, 0, 3 });
+    pixels[2].push_back(Pixel{ 0, 1, 3 });
+    pixels[2].push_back(Pixel{ 1, 1, 3 });
+    pixels[2].push_back(Pixel{ 1, 2, 3 });
+
+    pixels[3].push_back(Pixel{ 0, 2, 3 });
+    pixels[3].push_back(Pixel{ 1, 1, 3 });
+    pixels[3].push_back(Pixel{ 1, 2, 3 });
+    pixels[3].push_back(Pixel{ 2, 1, 3 });
 }
 
 LineBrick::LineBrick(){
     offset_x = 3;
-    pixels[0].push_back(Pixel{ 0, 0, 4 });
-    pixels[0].push_back(Pixel{ 1, 0, 4 });
-    pixels[0].push_back(Pixel{ 2, 0, 4 });
-    pixels[0].push_back(Pixel{ 3, 0, 4 });
+    offset_y = -1;
+    pixels[0].push_back(Pixel{ 0, 1, 4 });
+    pixels[0].push_back(Pixel{ 1, 1, 4 });
+    pixels[0].push_back(Pixel{ 2, 1, 4 });
+    pixels[0].push_back(Pixel{ 3, 1, 4 });
+
+    pixels[1].push_back(Pixel{ 0, 2, 4 });
+    pixels[1].push_back(Pixel{ 1, 2, 4 });
+    pixels[1].push_back(Pixel{ 2, 2, 4 });
+    pixels[1].push_back(Pixel{ 3, 2, 4 });
+
+    pixels[2].push_back(Pixel{ 2, 0, 4 });
+    pixels[2].push_back(Pixel{ 2, 1, 4 });
+    pixels[2].push_back(Pixel{ 2, 2, 4 });
+    pixels[2].push_back(Pixel{ 2, 3, 4 });
+
+    pixels[3].push_back(Pixel{ 0, 1, 4 });
+    pixels[3].push_back(Pixel{ 1, 1, 4 });
+    pixels[3].push_back(Pixel{ 2, 1, 4 });
+    pixels[3].push_back(Pixel{ 3, 1, 4 });
 }
 
 TriBrick::TriBrick(){
