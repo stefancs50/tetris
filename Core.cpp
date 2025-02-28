@@ -57,7 +57,7 @@ void Core::init()
 
 void Core::detect_keys()
 {
-    if(IsKeyDown(KEY_UP)&& isAllowedToMove(KEY_UP)){
+    if(IsKeyPressed(KEY_UP)&& isAllowedToMove(KEY_UP)){
         current_brick.rotate();
     }
 
@@ -106,7 +106,7 @@ bool Core::isAllowedToMove(int key){
         offset_x -= 1;
         
         for(Pixel p : current_brick.getPixels()){ 
-            if(offset_x < 0){ //left
+            if(p.x + offset_x < 0){ //left
                 return false;
             }
 

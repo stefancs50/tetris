@@ -59,10 +59,10 @@ ZBrick::ZBrick(){
 LineBrick::LineBrick(){
     offset_x = 3;
     offset_y = -1;
-    pixels[0].push_back(Pixel{ 0, 1, 4 });
+    pixels[0].push_back(Pixel{ 1, 0, 4 });
     pixels[0].push_back(Pixel{ 1, 1, 4 });
-    pixels[0].push_back(Pixel{ 2, 1, 4 });
-    pixels[0].push_back(Pixel{ 3, 1, 4 });
+    pixels[0].push_back(Pixel{ 1, 2, 4 });
+    pixels[0].push_back(Pixel{ 1, 3, 4 });
 
     pixels[1].push_back(Pixel{ 0, 2, 4 });
     pixels[1].push_back(Pixel{ 1, 2, 4 });
