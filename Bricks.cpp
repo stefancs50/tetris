@@ -84,8 +84,24 @@ LineBrick::LineBrick(){
 
 TriBrick::TriBrick(){
     offset_x = 4;
-    pixels[0].push_back(Pixel{ 0, 0, 5 });
+    offset_y = -1;
     pixels[0].push_back(Pixel{ 1, 0, 5 });
-    pixels[0].push_back(Pixel{ 2, 0, 5 });
     pixels[0].push_back(Pixel{ 1, 1, 5 });
+    pixels[0].push_back(Pixel{ 1, 2, 5 });
+    pixels[0].push_back(Pixel{ 2, 1, 5 });
+
+    pixels[1].push_back(Pixel{ 0, 1, 5 });
+    pixels[1].push_back(Pixel{ 1, 0, 5 });
+    pixels[1].push_back(Pixel{ 1, 1, 5 });
+    pixels[1].push_back(Pixel{ 2, 1, 5 });
+
+    pixels[2].push_back(Pixel{ 1, 0, 5 });
+    pixels[2].push_back(Pixel{ 1, 1, 5 });
+    pixels[2].push_back(Pixel{ 1, 2, 5 });
+    pixels[2].push_back(Pixel{ 0, 1, 5 });
+
+    pixels[3].push_back(Pixel{ 0, 1, 5 });
+    pixels[3].push_back(Pixel{ 1, 2, 5 });
+    pixels[3].push_back(Pixel{ 1, 1, 5 });
+    pixels[3].push_back(Pixel{ 2, 1, 5 });
 }

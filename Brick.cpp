@@ -28,9 +28,9 @@ vector<Pixel> Brick::getPixels(bool incrementstate){
     if(incrementstate)
     {
         if(rotatonstate == 3){
-            pixels[0];
+            return pixels[0];
         }else{
-            pixels[rotatonstate + 1];
+            return pixels[rotatonstate + 1];
         }
     }
     return pixels[rotatonstate];
