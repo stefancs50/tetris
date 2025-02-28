@@ -15,7 +15,7 @@ void Core::runFrame(){
     {
         BeginDrawing(); 
         detect_keys();
-        if(deltatime > 50){
+        if(deltatime > 50){   //TODO better time calculation
             deltatime = 0;
             if(isAllowedToMove(KEY_DOWN)){
                 current_brick.move_down();
@@ -100,8 +100,8 @@ bool Core::isAllowedToMove(int key){
                 return false;
             }  
         }
-
     }
+
     if(key == KEY_LEFT){
         offset_x -= 1;
         
@@ -145,9 +145,6 @@ bool Core::isAllowedToMove(int key){
             }
         }
     }
-
-
-
     return true;
 }
 
