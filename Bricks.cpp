@@ -11,8 +11,7 @@ QuadBrick::QuadBrick(){
 }
 
 LBrick::LBrick(){
-    offset_x = 4;
-    offset_y = -1;
+    offset_x = 3;
     pixels[0].push_back(Pixel{ 1, 0, 2 });
     pixels[0].push_back(Pixel{ 1, 1, 2 });
     pixels[0].push_back(Pixel{ 1, 2, 2 });
@@ -35,8 +34,7 @@ LBrick::LBrick(){
 }
 
 ZBrick::ZBrick(){
-    offset_x = 4;
-    offset_y = -1;
+    offset_x = 3;
     pixels[0].push_back(Pixel{ 1, 0, 3 });
     pixels[0].push_back(Pixel{ 1, 1, 3 });
     pixels[0].push_back(Pixel{ 2, 1, 3 });
@@ -83,8 +81,7 @@ LineBrick::LineBrick(){
 }
 
 TriBrick::TriBrick(){
-    offset_x = 4;
-    offset_y = -1;
+    offset_x = 3;
     pixels[0].push_back(Pixel{ 1, 0, 5 });
     pixels[0].push_back(Pixel{ 1, 1, 5 });
     pixels[0].push_back(Pixel{ 1, 2, 5 });
