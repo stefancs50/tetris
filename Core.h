@@ -23,6 +23,7 @@ public:
         Color { 192, 192, 192, 255 }  // hellgrau
         };
 private:
+    bool game_over;
     double deltatime;
     Brick current_brick;
     Brick next_brick;
