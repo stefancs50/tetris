@@ -57,26 +57,20 @@ void Core::init()
 
 void Core::detect_keys()
 {
+    if(IsKeyDown(KEY_UP)&& isAllowedToMove(KEY_UP)){
+        current_brick.rotate();
+    }
+
     if(IsKeyDown(KEY_DOWN) && isAllowedToMove(KEY_DOWN)){
         current_brick.move_down();
     }
-    if(IsKeyDown(KEY_UP)){
-        lockBrick();
-        //current_brick = getNewBrick();
-        if(isAllowedToMove(KEY_UP)){
-        }
-        //current_brick.rotate();
-    }
-    if(IsKeyDown(KEY_LEFT)){
-        if(isAllowedToMove(KEY_LEFT)){
-            current_brick.move_left();
-        }
+
+    if(IsKeyDown(KEY_LEFT) && isAllowedToMove(KEY_LEFT)){
+        current_brick.move_left();
     }
 
-    if(IsKeyDown(KEY_RIGHT)){
-        if(isAllowedToMove(KEY_RIGHT)){
-            current_brick.move_right();
-        }
+    if(IsKeyDown(KEY_RIGHT) && isAllowedToMove(KEY_RIGHT)){
+        current_brick.move_right();
     }
 }
 
@@ -85,7 +79,7 @@ bool Core::isAllowedToMove(int key){
     int offset_y = current_brick.offset_y;
 
     if(offset_y == 0){ //when it spawns
-        for(Pixel p : current_brick.pixels){ 
+        for(Pixel p : current_brick.getPixels()){ 
             if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
                 lockBrick();
                 game_over = true;
@@ -96,7 +90,7 @@ bool Core::isAllowedToMove(int key){
 
     if(key == KEY_DOWN){
         offset_y += 1;
-        for(Pixel p : current_brick.pixels){ 
+        for(Pixel p : current_brick.getPixels()){ 
             if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
                 lockBrick();
                 return false;
@@ -111,7 +105,7 @@ bool Core::isAllowedToMove(int key){
     if(key == KEY_LEFT){
         offset_x -= 1;
         
-        for(Pixel p : current_brick.pixels){ 
+        for(Pixel p : current_brick.getPixels()){ 
             if(offset_x < 0){ //left
                 return false;
             }
@@ -124,7 +118,7 @@ bool Core::isAllowedToMove(int key){
 
     if(key == KEY_RIGHT){
         offset_x += 1;
-        for(Pixel p : current_brick.pixels){ //right
+        for(Pixel p : current_brick.getPixels()){ //right
             if(p.x + offset_x > 9){
                 return false;
             }
@@ -134,11 +128,31 @@ bool Core::isAllowedToMove(int key){
             }
         }
     }
+
+    if(key == KEY_UP){
+        for(Pixel p : current_brick.getPixels(true)){ //right
+            if(p.x + offset_x > 9){ //left
+                return false;
+            }
+            if(p.x + offset_x > 9){ //right
+                return false;
+            }
+            if(p.y + offset_y > 19){ //down
+                return false;
+            }  
+            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+                return false;
+            }
+        }
+    }
+
+
+
     return true;
 }
 
 void Core::lockBrick(){
-    for(Pixel p : current_brick.pixels){ 
+    for(Pixel p : current_brick.getPixels()){ 
         grid[p.x + current_brick.offset_x][p.y + current_brick.offset_y] = p.color;
     }
     current_brick.undraw();

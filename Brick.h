@@ -15,7 +15,9 @@ public:
     void move_right();
     void rotate();
     void draw();
-    vector<Pixel> pixels; 
+    vector<Pixel> getPixels(bool incrementstate = false);
+    vector<Pixel> pixels[4];
+    
     Color Colors[18]{ BLACK, BLUE, GREEN, YELLOW, BROWN, RED, WHITE, ORANGE, PINK, PURPLE, GOLD,
         Color { 255, 0, 255, 255 },// Magenta
         Color { 128, 128, 128, 255 }, // Grau
@@ -27,7 +29,8 @@ public:
     };
     int offset_x, offset_y;
     void undraw();
+    int rotatonstate = 0;
 
-protected:    
+protected: 
     int pixel_size = 20;
 };
