@@ -13,13 +13,11 @@ int main () {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Stefans Tetris");    
    
     Core core;
-    SetTargetFPS(60);
-    
+    SetTargetFPS(20);
+    core.draw();
+
     while (WindowShouldClose() == false){
-        BeginDrawing();
-        core.detect_keys();
-        core.draw();
-        EndDrawing();
+        core.runFrame();
     }
 
     CloseWindow();

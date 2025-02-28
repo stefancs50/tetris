@@ -8,6 +8,7 @@ class Core{
 
 public:
     Core();
+    void runFrame();
     void init();
     void draw();
     void detect_keys();
@@ -22,9 +23,13 @@ public:
         Color { 192, 192, 192, 255 }  // hellgrau
         };
 private:
+    double deltatime;
     Brick current_brick;
     Brick next_brick;
     int height = 20;
     int width = 10;
     int pixel_size = 20;
+    bool isAllowedToMove(int key);
+    void lockBrick();
+    Brick getNewBrick();
 };

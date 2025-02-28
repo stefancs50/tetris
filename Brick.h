@@ -25,10 +25,9 @@ public:
         Color { 0, 255, 255, 255 },// Cyan
         Color { 192, 192, 192, 255 }  // hellgrau
     };
+    int offset_x, offset_y;
+    void undraw();
 
 protected:    
-    void undraw();
-    bool isCollide();
-    int offset_x, offset_y;
     int pixel_size = 20;
 };
