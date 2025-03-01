@@ -159,7 +159,7 @@ void Core::lockBrick(){
 
 Brick Core::getNewBrick()
 {
-    Brick allbricks[5] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick() };
-    int index = rand() % 5;
+    Brick allbricks[7] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick(), LTwoBrick(), ZTwoBrick() };
+    int index = rand() % 7;
     return allbricks[index];
 }

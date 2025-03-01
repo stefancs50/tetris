@@ -17,9 +17,19 @@ public:
     ZBrick();
 };
 
+class ZTwoBrick : public Brick{
+public:
+    ZTwoBrick();
+};
+
 class LineBrick : public Brick{
 public:
     LineBrick();
+};
+
+class LTwoBrick : public Brick{
+public:
+    LTwoBrick();
 };
 
 class TriBrick : public Brick{
