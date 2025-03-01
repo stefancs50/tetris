@@ -18,19 +18,19 @@ LBrick::LBrick(){
     pixels[0].push_back(Pixel{ 2, 0, 2 });
 
     pixels[1].push_back(Pixel{ 0, 1, 2 });
-    pixels[1].push_back(Pixel{ 0, 2, 2 });
     pixels[1].push_back(Pixel{ 1, 1, 2 });
     pixels[1].push_back(Pixel{ 2, 1, 2 });
+    pixels[1].push_back(Pixel{ 2, 2, 2 });
 
-    pixels[2].push_back(Pixel{ 0, 2, 2 });
     pixels[2].push_back(Pixel{ 1, 0, 2 });
     pixels[2].push_back(Pixel{ 1, 1, 2 });
     pixels[2].push_back(Pixel{ 1, 2, 2 });
+    pixels[2].push_back(Pixel{ 0, 2, 2 });
 
+    pixels[3].push_back(Pixel{ 0, 0, 2 });
     pixels[3].push_back(Pixel{ 0, 1, 2 });
     pixels[3].push_back(Pixel{ 1, 1, 2 });
     pixels[3].push_back(Pixel{ 2, 1, 2 });
-    pixels[3].push_back(Pixel{ 2, 2, 2 });
 }
 
 ZBrick::ZBrick(){
