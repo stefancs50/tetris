@@ -7,23 +7,29 @@
 Core::Core(){
     height = 20;
     width = 10;
+
+    brickspeed = 0.5; 
+    time = GetTime();
+
     this->init();
 }
 
 void Core::runFrame(){
+    float currenttime = GetTime();
+
     if(!game_over)
     {
         BeginDrawing(); 
-        detect_keys();
-        if(deltatime > 50){   //TODO better time calculation
-            deltatime = 0;
+
+        if(currenttime - time > brickspeed){
+            time = currenttime;
             if(isAllowedToMove(KEY_DOWN)){
                 current_brick.move_down();
             }
-        }else if(deltatime < 25){  
-            //detect_keys();
         }
-        deltatime += GetFrameTime() * 100;
+
+        detect_keys();
+        check_line_full();
         draw();
         EndDrawing();
     }
@@ -162,4 +168,14 @@ Brick Core::getNewBrick()
     Brick allbricks[7] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick(), LTwoBrick(), ZTwoBrick() };
     int index = rand() % 7;
     return allbricks[index];
+}
+
+void Core::check_line_full(){
+    for(int x = 0; x < width; x++)
+    {
+        for(int y = 0; y < height; y++)
+        {
+            //grid[x][y] = (sizeof(Colors)/sizeof(Colors[0]) ) - 1;
+        }
+    }
 }

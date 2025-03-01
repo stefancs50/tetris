@@ -23,6 +23,9 @@ public:
         Color { 192, 192, 192, 255 }  // hellgrau
         };
 private:
+    float brickspeed;
+
+    float time;
     bool game_over;
     double deltatime;
     Brick current_brick;
@@ -33,4 +36,5 @@ private:
     bool isAllowedToMove(int key);
     void lockBrick();
     Brick getNewBrick();
+    void check_line_full();
 };

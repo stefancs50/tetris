@@ -13,10 +13,12 @@ int main () {
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Stefans Tetris");    
    
     Core core;
-    SetTargetFPS(20);
-    core.draw();
+    int framerate = 20;
+    SetTargetFPS(framerate);
 
+   
     while (WindowShouldClose() == false){
+        
         core.runFrame();
     }
 
