@@ -37,4 +37,5 @@ private:
     void lockBrick();
     Brick getNewBrick();
     void check_line_full();
+    void remove_line(int y_index);
 };

@@ -63,43 +63,44 @@ ZBrick::ZBrick(){
     pixels[0].push_back(Pixel{ 2, 1, 3 });
     pixels[0].push_back(Pixel{ 2, 2, 3 });
 
-    pixels[1].push_back(Pixel{ 0, 1, 3 });
-    pixels[1].push_back(Pixel{ 1, 0, 3 });
     pixels[1].push_back(Pixel{ 1, 1, 3 });
-    pixels[1].push_back(Pixel{ 2, 0, 3 });
+    pixels[1].push_back(Pixel{ 1, 2, 3 });
+    pixels[1].push_back(Pixel{ 0, 2, 3 });
+    pixels[1].push_back(Pixel{ 2, 1, 3 });
 
     pixels[2].push_back(Pixel{ 0, 0, 3 });
     pixels[2].push_back(Pixel{ 0, 1, 3 });
     pixels[2].push_back(Pixel{ 1, 1, 3 });
     pixels[2].push_back(Pixel{ 1, 2, 3 });
 
-    pixels[3].push_back(Pixel{ 0, 2, 3 });
+    pixels[3].push_back(Pixel{ 0, 1, 3 });
+    pixels[3].push_back(Pixel{ 1, 0, 3 });
     pixels[3].push_back(Pixel{ 1, 1, 3 });
-    pixels[3].push_back(Pixel{ 1, 2, 3 });
-    pixels[3].push_back(Pixel{ 2, 1, 3 });
+    pixels[3].push_back(Pixel{ 2, 0, 3 });
 }
 
 ZTwoBrick::ZTwoBrick(){
     offset_x = 3;
+    pixels[0].push_back(Pixel{ 1, 0, 7 });
     pixels[0].push_back(Pixel{ 0, 1, 7 });
     pixels[0].push_back(Pixel{ 1, 1, 7 });
-    pixels[0].push_back(Pixel{ 1, 2, 7 });
-    pixels[0].push_back(Pixel{ 2, 2, 7 });
+    pixels[0].push_back(Pixel{ 0, 2, 7 });
 
     pixels[1].push_back(Pixel{ 0, 1, 7 });
-    pixels[1].push_back(Pixel{ 1, 0, 7 });
     pixels[1].push_back(Pixel{ 1, 1, 7 });
-    pixels[1].push_back(Pixel{ 2, 0, 7 });
+    pixels[1].push_back(Pixel{ 1, 2, 7 });
+    pixels[1].push_back(Pixel{ 2, 2, 7 });
+
 
     pixels[2].push_back(Pixel{ 0, 0, 7 });
     pixels[2].push_back(Pixel{ 0, 1, 7 });
     pixels[2].push_back(Pixel{ 1, 1, 7 });
     pixels[2].push_back(Pixel{ 1, 2, 7 });
 
-    pixels[3].push_back(Pixel{ 0, 2, 3 });
-    pixels[3].push_back(Pixel{ 1, 1, 3 });
-    pixels[3].push_back(Pixel{ 1, 2, 3 });
-    pixels[3].push_back(Pixel{ 2, 1, 3 });
+    pixels[3].push_back(Pixel{ 0, 2, 7 });
+    pixels[3].push_back(Pixel{ 1, 1, 7 });
+    pixels[3].push_back(Pixel{ 1, 2, 7 });
+    pixels[3].push_back(Pixel{ 2, 1, 7 });
 }
 
 LineBrick::LineBrick(){

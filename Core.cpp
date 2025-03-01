@@ -165,17 +165,38 @@ void Core::lockBrick(){
 
 Brick Core::getNewBrick()
 {
-    Brick allbricks[7] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick(), LTwoBrick(), ZTwoBrick() };
-    int index = rand() % 7;
+    //Brick allbricks[7] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick(), LTwoBrick(), ZTwoBrick() };
+    Brick allbricks[2] = { ZBrick(), ZTwoBrick() };
+    int index = rand() % 2;
     return allbricks[index];
 }
 
 void Core::check_line_full(){
-    for(int x = 0; x < width; x++)
+    for(int y = 0; y < height; y++)
     {
-        for(int y = 0; y < height; y++)
+        int full = 0;
+        for(int x = 0; x < width; x++)
         {
-            //grid[x][y] = (sizeof(Colors)/sizeof(Colors[0]) ) - 1;
+            if(grid[x][y] != 17){
+                full++;
+            }
+            if(full == width){
+                remove_line(y);
+            }
+        }
+    }
+}
+
+void Core::remove_line(int y_index){
+    for(int y = y_index; y > 0; y--)
+    {
+        for(int x = 0; x < width; x++)
+        {
+            if(y == 0){
+                grid[x][y] = 17;
+            }else{
+                grid[x][y] = grid[x][y - 1];
+            }
         }
     }
 }
