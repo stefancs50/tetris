@@ -68,27 +68,8 @@ ZBrick::ZBrick(){
     pixels[1].push_back(Pixel{ 0, 2, 3 });
     pixels[1].push_back(Pixel{ 2, 1, 3 });
 
-    pixels[2].push_back(Pixel{ 1, 0, 3 });
-    pixels[2].push_back(Pixel{ 1, 1, 3 });
-    pixels[2].push_back(Pixel{ 2, 1, 3 });
-    pixels[2].push_back(Pixel{ 2, 2, 3 });
-
-    pixels[3].push_back(Pixel{ 1, 1, 3 });
-    pixels[3].push_back(Pixel{ 1, 2, 3 });
-    pixels[3].push_back(Pixel{ 0, 2, 3 });
-    pixels[3].push_back(Pixel{ 2, 1, 3 });
-
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
-    // pixels[2].push_back(Pixel{ 0, 0, 3 });
-    // pixels[2].push_back(Pixel{ 0, 1, 3 });
-    // pixels[2].push_back(Pixel{ 1, 1, 3 });
-    // pixels[2].push_back(Pixel{ 1, 2, 3 });
-
-    // pixels[3].push_back(Pixel{ 0, 1, 3 });
-    // pixels[3].push_back(Pixel{ 1, 0, 3 });
-    // pixels[3].push_back(Pixel{ 1, 1, 3 });
-    // pixels[3].push_back(Pixel{ 2, 0, 3 });
 }
 
 ZTwoBrick::ZTwoBrick(){
@@ -105,16 +86,6 @@ ZTwoBrick::ZTwoBrick(){
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
-
-    // pixels[2].push_back(Pixel{ 0, 0, 7 });
-    // pixels[2].push_back(Pixel{ 0, 1, 7 });
-    // pixels[2].push_back(Pixel{ 1, 1, 7 });
-    // pixels[2].push_back(Pixel{ 1, 2, 7 });
-
-    // pixels[3].push_back(Pixel{ 0, 2, 7 });
-    // pixels[3].push_back(Pixel{ 1, 1, 7 });
-    // pixels[3].push_back(Pixel{ 1, 2, 7 });
-    // pixels[3].push_back(Pixel{ 2, 1, 7 });
 }
 
 LineBrick::LineBrick(){
@@ -131,8 +102,6 @@ LineBrick::LineBrick(){
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
-   
-
 }
 
 TriBrick::TriBrick(){
@@ -143,7 +112,7 @@ TriBrick::TriBrick(){
     pixels[0].push_back(Pixel{ 2, 1, 5 });
 
     pixels[1].push_back(Pixel{ 0, 1, 5 });
-    pixels[1].push_back(Pixel{ 1, 0, 5 });
+    pixels[1].push_back(Pixel{ 1, 2, 5 });
     pixels[1].push_back(Pixel{ 1, 1, 5 });
     pixels[1].push_back(Pixel{ 2, 1, 5 });
 
@@ -153,7 +122,7 @@ TriBrick::TriBrick(){
     pixels[2].push_back(Pixel{ 0, 1, 5 });
 
     pixels[3].push_back(Pixel{ 0, 1, 5 });
-    pixels[3].push_back(Pixel{ 1, 2, 5 });
+    pixels[3].push_back(Pixel{ 1, 0, 5 });
     pixels[3].push_back(Pixel{ 1, 1, 5 });
     pixels[3].push_back(Pixel{ 2, 1, 5 });
 }
