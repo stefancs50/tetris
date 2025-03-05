@@ -2,25 +2,22 @@
 #include <raylib.h>
 #include <vector>
 #include "Core.h"
+#include "Gui.h"
 
 using namespace std;
 
 int main () {
-
-    const int SCREEN_WIDTH = 201;
-    const int SCREEN_HEIGHT = 401;
-
-    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Stefans Tetris");    
    
-    Core core;
-    int framerate = 20;
+    Core game;
+    Gui gui;
+    int framerate = 18;
     SetTargetFPS(framerate);
-
-   
-    while (WindowShouldClose() == false){
-        
-        core.runFrame();
+    
+    while (WindowShouldClose() == false){       
+        game.runFrame();
     }
+    
 
     CloseWindow();
+    return 0;
 }

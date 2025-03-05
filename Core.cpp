@@ -11,7 +11,7 @@ Core::Core(){
     brickspeed = 0.5; 
     time = GetTime();
 
-    this->init();
+    init();
 }
 
 void Core::runFrame(){
@@ -20,7 +20,8 @@ void Core::runFrame(){
     if(!game_over)
     {
         BeginDrawing(); 
-
+        ClearBackground(BLACK);
+        
         if(currenttime - time > brickspeed){
             time = currenttime;
             if(isAllowedToMove(KEY_DOWN)){
@@ -45,12 +46,14 @@ void Core::draw()
         }
     }
     current_brick.draw();
+    next_brick.draw_next_brick();
 }
 
 void Core::init()
 {
     game_over = false;
     current_brick = getNewBrick();
+    next_brick = getNewBrick();
 
     for(int i = 0; i < width; i++)
     {
@@ -137,7 +140,7 @@ bool Core::isAllowedToMove(int key){
 
     if(key == KEY_UP){
         for(Pixel p : current_brick.getPixels(true)){ //right
-            if(p.x + offset_x > 9){ //left
+            if(p.x + offset_x < 0){ //left
                 return false;
             }
             if(p.x + offset_x > 9){ //right
@@ -158,9 +161,11 @@ void Core::lockBrick(){
     for(Pixel p : current_brick.getPixels()){ 
         grid[p.x + current_brick.offset_x][p.y + current_brick.offset_y] = p.color;
     }
-    current_brick.undraw();
-    current_brick = getNewBrick();
 
+    current_brick.undraw();
+    next_brick.draw_next_brick(true);
+    current_brick = next_brick;
+    next_brick = getNewBrick();
 }
 
 Brick Core::getNewBrick()

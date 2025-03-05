@@ -29,8 +29,10 @@ public:
     };
     int offset_x, offset_y;
     void undraw();
+    void draw_next_brick(bool undraw = false);
     int rotatonstate = 0;
 
 protected: 
+
     int pixel_size = 20;
 };

@@ -24,6 +24,22 @@ void Brick::undraw(){
     }
 }
 
+void Brick::draw_next_brick(bool undraw)
+{
+    int giu_x = 12;
+    int gui_y = 1;
+
+    if(undraw){
+        for(Pixel p : getPixels()){
+            DrawRectangle((giu_x + offset_x + p.x) * pixel_size + 1, (gui_y + offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[0]);
+        }
+    }else{
+        for(Pixel p : getPixels()){
+            DrawRectangle((giu_x + offset_x + p.x) * pixel_size + 1, (gui_y + offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[p.color]);
+        }
+    }
+}
+
 vector<Pixel> Brick::getPixels(bool incrementstate){
     if(incrementstate)
     {

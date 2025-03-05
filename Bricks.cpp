@@ -34,7 +34,7 @@ LBrick::LBrick(){
 }
 
 LTwoBrick::LTwoBrick(){
-    offset_x = 3;
+    offset_x = 4;
     pixels[0].push_back(Pixel{ 1, 0, 8 });
     pixels[0].push_back(Pixel{ 1, 1, 8 });
     pixels[0].push_back(Pixel{ 1, 2, 8 });
@@ -58,6 +58,7 @@ LTwoBrick::LTwoBrick(){
 
 ZBrick::ZBrick(){
     offset_x = 3;
+
     pixels[0].push_back(Pixel{ 1, 0, 3 });
     pixels[0].push_back(Pixel{ 1, 1, 3 });
     pixels[0].push_back(Pixel{ 2, 1, 3 });
@@ -73,7 +74,7 @@ ZBrick::ZBrick(){
 }
 
 ZTwoBrick::ZTwoBrick(){
-    offset_x = 3;
+    offset_x = 4;
     pixels[0].push_back(Pixel{ 1, 0, 7 });
     pixels[0].push_back(Pixel{ 0, 1, 7 });
     pixels[0].push_back(Pixel{ 1, 1, 7 });
@@ -90,15 +91,16 @@ ZTwoBrick::ZTwoBrick(){
 
 LineBrick::LineBrick(){
     offset_x = 3;
-    pixels[0].push_back(Pixel{ 1, 0, 4 });
-    pixels[0].push_back(Pixel{ 1, 1, 4 });
+    offset_y = -1;
+    pixels[0].push_back(Pixel{ 0, 2, 4 });
     pixels[0].push_back(Pixel{ 1, 2, 4 });
-    pixels[0].push_back(Pixel{ 1, 3, 4 });
+    pixels[0].push_back(Pixel{ 2, 2, 4 });
+    pixels[0].push_back(Pixel{ 3, 2, 4 });
 
-    pixels[1].push_back(Pixel{ 0, 2, 4 });
+    pixels[1].push_back(Pixel{ 1, 0, 4 });
+    pixels[1].push_back(Pixel{ 1, 1, 4 });
     pixels[1].push_back(Pixel{ 1, 2, 4 });
-    pixels[1].push_back(Pixel{ 2, 2, 4 });
-    pixels[1].push_back(Pixel{ 3, 2, 4 });
+    pixels[1].push_back(Pixel{ 1, 3, 4 });
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
