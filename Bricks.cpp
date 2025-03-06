@@ -91,7 +91,7 @@ ZTwoBrick::ZTwoBrick(){
 
 LineBrick::LineBrick(){
     offset_x = 3;
-    offset_y = -1;
+    offset_y = -2;
     pixels[0].push_back(Pixel{ 0, 2, 4 });
     pixels[0].push_back(Pixel{ 1, 2, 4 });
     pixels[0].push_back(Pixel{ 2, 2, 4 });

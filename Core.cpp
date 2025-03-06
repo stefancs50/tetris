@@ -14,12 +14,15 @@ Core::Core(){
     init();
 }
 
+
 void Core::runFrame(){
     float currenttime = GetTime();
 
+    BeginDrawing();
+
     if(!game_over)
     {
-        BeginDrawing(); 
+        
         ClearBackground(BLACK);
         
         if(currenttime - time > brickspeed){
@@ -32,8 +35,17 @@ void Core::runFrame(){
         detect_keys();
         check_line_full();
         draw();
-        EndDrawing();
     }
+    else
+    {
+        if (GetKeyPressed()) {
+            init();
+        }
+    }
+
+    gui.draw();
+
+    EndDrawing();
 }
 
 void Core::draw()
@@ -161,11 +173,13 @@ void Core::lockBrick(){
     for(Pixel p : current_brick.getPixels()){ 
         grid[p.x + current_brick.offset_x][p.y + current_brick.offset_y] = p.color;
     }
-
     current_brick.undraw();
     next_brick.draw_next_brick(true);
     current_brick = next_brick;
     next_brick = getNewBrick();
+
+    gui.increment_brick_count();;
+    brickspeed -= 0.01;
 }
 
 Brick Core::getNewBrick()
@@ -176,6 +190,8 @@ Brick Core::getNewBrick()
 }
 
 void Core::check_line_full(){
+    int removed_lines = 0;
+
     for(int y = 0; y < height; y++)
     {
         int full = 0;
@@ -186,9 +202,28 @@ void Core::check_line_full(){
             }
             if(full == width){
                 remove_line(y);
+                removed_lines++;
             }
         }
     }
+
+    if(removed_lines > 0){
+        switch(removed_lines){
+            case 1:
+                gui.increment_score_by(100);
+                break;
+            case 2:
+                gui.increment_score_by(300);
+                break;
+            case 3:
+                gui.increment_score_by(500);
+                break;
+            case 4:
+                gui.increment_score_by(800);
+                break;
+        }
+    }
+    gui.increment_lines_by(removed_lines);
 }
 
 void Core::remove_line(int y_index){

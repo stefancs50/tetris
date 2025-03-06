@@ -27,7 +27,7 @@ void Brick::undraw(){
 void Brick::draw_next_brick(bool undraw)
 {
     int giu_x = 12;
-    int gui_y = 1;
+    int gui_y = 2;
 
     if(undraw){
         for(Pixel p : getPixels()){

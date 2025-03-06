@@ -3,6 +3,7 @@
 #include "Pixel.h"
 #include "raylib.h"
 #include "Brick.h"
+#include "Gui.h"
 
 class Core{
 
@@ -23,8 +24,9 @@ public:
         Color { 192, 192, 192, 255 }  // hellgrau
         };
 private:
+    Gui gui;
     float brickspeed;
-
+    
     float time;
     bool game_over;
     double deltatime;

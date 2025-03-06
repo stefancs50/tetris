@@ -9,15 +9,13 @@ using namespace std;
 int main () {
    
     Core game;
-    Gui gui;
+
     int framerate = 18;
     SetTargetFPS(framerate);
     
     while (WindowShouldClose() == false){       
         game.runFrame();
     }
-    
 
-    CloseWindow();
     return 0;
 }
