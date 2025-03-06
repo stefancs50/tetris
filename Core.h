@@ -34,7 +34,7 @@ private:
     Brick next_brick;
     int height = 20;
     int width = 10;
-    int pixel_size = 20;
+    int PIXEL_SIZE = 20;
     bool isAllowedToMove(int key);
     void lockBrick();
     Brick getNewBrick();

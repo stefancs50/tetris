@@ -1,6 +1,7 @@
 #include "Brick.h"
 #include "Pixel.h"
 #include "raylib.h"
+#include "constants.h"
 
 Brick::Brick(){
     offset_x = 0;
@@ -14,13 +15,13 @@ void Brick::setposition(int x, int y){
 
 void Brick::draw(){
     for(Pixel p : getPixels()){
-        DrawRectangle((offset_x + p.x) * pixel_size + 1, (offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[p.color]);
+        DrawRectangle((1 + offset_x + p.x) * PIXEL_SIZE + 1, (offset_y + p.y) * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[p.color]);
     }
 }
 
 void Brick::undraw(){
     for(Pixel p : getPixels()){
-        DrawRectangle((offset_x + p.x) * pixel_size + 1, (offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[(sizeof(Colors)/sizeof(Colors[0]) ) - 1]);
+        DrawRectangle((1 + offset_x + p.x) * PIXEL_SIZE + 1, (offset_y + p.y) * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[(sizeof(Colors)/sizeof(Colors[0]) ) - 1]);
     }
 }
 
@@ -31,11 +32,11 @@ void Brick::draw_next_brick(bool undraw)
 
     if(undraw){
         for(Pixel p : getPixels()){
-            DrawRectangle((giu_x + offset_x + p.x) * pixel_size + 1, (gui_y + offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[0]);
+            DrawRectangle((giu_x + offset_x + p.x) * PIXEL_SIZE + 1, (gui_y + offset_y + p.y) * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[0]);
         }
     }else{
         for(Pixel p : getPixels()){
-            DrawRectangle((giu_x + offset_x + p.x) * pixel_size + 1, (gui_y + offset_y + p.y) * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[p.color]);
+            DrawRectangle((giu_x + offset_x + p.x) * PIXEL_SIZE + 1, (gui_y + offset_y + p.y) * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[p.color]);
         }
     }
 }

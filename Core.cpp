@@ -3,6 +3,7 @@
 #include "Pixel.h"
 #include "raylib.h"
 #include "Bricks.h"
+#include "Constants.h"
 
 Core::Core(){
     height = 20;
@@ -19,12 +20,10 @@ void Core::runFrame(){
     float currenttime = GetTime();
 
     BeginDrawing();
+    ClearBackground(BLACK);
 
     if(!game_over)
     {
-        
-        ClearBackground(BLACK);
-        
         if(currenttime - time > brickspeed){
             time = currenttime;
             if(isAllowedToMove(KEY_DOWN)){
@@ -43,7 +42,7 @@ void Core::runFrame(){
         }
     }
 
-    gui.draw();
+    gui.draw(game_over);
 
     EndDrawing();
 }
@@ -54,7 +53,7 @@ void Core::draw()
     {
         for(int y = 0; y < height; y++)
         {
-            DrawRectangle(x * pixel_size + 1, y * pixel_size + 1, pixel_size - 1, pixel_size - 1, Colors[grid[x][y]]);
+            DrawRectangle(PIXEL_SIZE + x * PIXEL_SIZE + 1, y * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[grid[x][y]]);
         }
     }
     current_brick.draw();
@@ -66,12 +65,14 @@ void Core::init()
     game_over = false;
     current_brick = getNewBrick();
     next_brick = getNewBrick();
+    brickspeed = 0.5;
+    gui.reset();
 
-    for(int i = 0; i < width; i++)
+    for(int x = 0; x < width; x++)
     {
         for(int y = 0; y < height; y++)
         {
-            grid[i][y] = (sizeof(Colors)/sizeof(Colors[0]) ) - 1;
+            grid[x][y] = BACKGROUND_COLOR_INDEX;
         }
     }
 }
@@ -131,7 +132,7 @@ bool Core::isAllowedToMove(int key){
                 return false;
             }
 
-            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+            if(grid[p.x + offset_x][p.y + offset_y] != BACKGROUND_COLOR_INDEX){ //touches locked brick
                 return false;
             }
         }
@@ -144,7 +145,7 @@ bool Core::isAllowedToMove(int key){
                 return false;
             }
 
-            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+            if(grid[p.x + offset_x][p.y + offset_y] != BACKGROUND_COLOR_INDEX){ //touches locked brick
                 return false;
             }
         }
@@ -161,7 +162,7 @@ bool Core::isAllowedToMove(int key){
             if(p.y + offset_y > 19){ //down
                 return false;
             }  
-            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+            if(grid[p.x + offset_x][p.y + offset_y] != BACKGROUND_COLOR_INDEX){ //touches locked brick
                 return false;
             }
         }
@@ -232,7 +233,7 @@ void Core::remove_line(int y_index){
         for(int x = 0; x < width; x++)
         {
             if(y == 0){
-                grid[x][y] = 17;
+                grid[x][y] = BACKGROUND_COLOR_INDEX;
             }else{
                 grid[x][y] = grid[x][y - 1];
             }
