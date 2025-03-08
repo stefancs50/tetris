@@ -33,15 +33,16 @@ void Core::runFrame(){
 
         detect_keys();
         check_line_full();
-        draw();
     }
     else
     {
+        
         if (GetKeyPressed()) {
             init();
         }
     }
 
+    draw();
     gui.draw(game_over);
 
     EndDrawing();
@@ -102,7 +103,7 @@ bool Core::isAllowedToMove(int key){
 
     if(offset_y == 0){ //when it spawns
         for(Pixel p : current_brick.getPixels()){ 
-            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+            if(grid[p.x + offset_x][p.y + offset_y] != BACKGROUND_COLOR_INDEX){ //touches locked brick
                 lockBrick();
                 game_over = true;
                 return false;
@@ -113,7 +114,7 @@ bool Core::isAllowedToMove(int key){
     if(key == KEY_DOWN){
         offset_y += 1;
         for(Pixel p : current_brick.getPixels()){ 
-            if(grid[p.x + offset_x][p.y + offset_y] != 17){ //touches locked brick
+            if(grid[p.x + offset_x][p.y + offset_y] != BACKGROUND_COLOR_INDEX){ //touches locked brick
                 lockBrick();
                 return false;
             }  
@@ -187,7 +188,12 @@ Brick Core::getNewBrick()
 {
     Brick allbricks[7] = { QuadBrick(), LBrick(), ZBrick(), LineBrick(), TriBrick(), LTwoBrick(), ZTwoBrick() };
     int index = rand() % 7;
-    return allbricks[index];
+    while (last_Brick_index == index)
+    {
+        index = rand() % 7;
+    }
+    last_Brick_index = index;
+    return allbricks[index];    
 }
 
 void Core::check_line_full(){
@@ -198,7 +204,7 @@ void Core::check_line_full(){
         int full = 0;
         for(int x = 0; x < width; x++)
         {
-            if(grid[x][y] != 17){
+            if(grid[x][y] != BACKGROUND_COLOR_INDEX){
                 full++;
             }
             if(full == width){

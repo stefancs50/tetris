@@ -18,15 +18,17 @@ public:
     vector<Pixel> getPixels(bool incrementstate = false);
     vector<Pixel> pixels[4];
     
-    Color Colors[18]{ BLACK, BLUE, GREEN, YELLOW, BROWN, RED, WHITE, ORANGE, PINK, PURPLE, GOLD,
-        Color { 255, 0, 255, 255 },// Magenta
-        Color { 128, 128, 128, 255 }, // Grau
-        Color { 64, 64, 64, 255 },     // Dunkelgrau
-        Color { 192, 192, 192, 255 },   // Hellgrau
-        Color { 192, 192, 192, 255 }, // Silber
-        Color { 0, 255, 255, 255 },// Cyan
+    Color Colors[9]{ BLACK,
+        Color{ 0, 255, 255, 255 }, // Cyan (I-Block)
+        Color{ 0, 0, 255, 255 }, // Blau (J-Block)
+        Color{ 255, 165, 0, 255 }, // Orange (L-Block)
+        Color{ 255, 255, 0, 255 }, // Gelb (O-Block)
+        Color{ 0, 255, 0, 255 }, // Grün (S-Block)
+        Color{ 128, 0, 128, 255 }, // Lila (T-Block)
+        Color{ 255, 0, 0, 255 }, // Rot (Z-Block)
         Color { 192, 192, 192, 255 }  // hellgrau
-    };
+        };
+        
     int offset_x, offset_y;
     void undraw();
     void draw_next_brick(bool undraw = false);

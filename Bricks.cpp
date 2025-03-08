@@ -3,71 +3,74 @@
 
 QuadBrick::QuadBrick(){
     offset_x = 4;
-    pixels[0].push_back(Pixel{ 0, 0, 1 });
-    pixels[0].push_back(Pixel{ 0, 1, 1 });
-    pixels[0].push_back(Pixel{ 1, 0, 1 });
-    pixels[0].push_back(Pixel{ 1, 1, 1 });
+    int color = 4;
+    pixels[0].push_back(Pixel{ 0, 0, color });
+    pixels[0].push_back(Pixel{ 0, 1, color });
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
     pixels[1] = pixels[2] = pixels[3] = pixels[0];
 }
 
 LBrick::LBrick(){
     offset_x = 3;
-    pixels[0].push_back(Pixel{ 1, 0, 2 });
-    pixels[0].push_back(Pixel{ 1, 1, 2 });
-    pixels[0].push_back(Pixel{ 1, 2, 2 });
-    pixels[0].push_back(Pixel{ 2, 0, 2 });
+    int color = 2;
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
+    pixels[0].push_back(Pixel{ 1, 2, color });
+    pixels[0].push_back(Pixel{ 2, 0, color });
 
-    pixels[1].push_back(Pixel{ 0, 1, 2 });
-    pixels[1].push_back(Pixel{ 1, 1, 2 });
-    pixels[1].push_back(Pixel{ 2, 1, 2 });
-    pixels[1].push_back(Pixel{ 2, 2, 2 });
+    pixels[1].push_back(Pixel{ 0, 1, color });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 2, 1, color });
+    pixels[1].push_back(Pixel{ 2, 2, color });
 
-    pixels[2].push_back(Pixel{ 1, 0, 2 });
-    pixels[2].push_back(Pixel{ 1, 1, 2 });
-    pixels[2].push_back(Pixel{ 1, 2, 2 });
-    pixels[2].push_back(Pixel{ 0, 2, 2 });
+    pixels[2].push_back(Pixel{ 1, 0, color });
+    pixels[2].push_back(Pixel{ 1, 1, color });
+    pixels[2].push_back(Pixel{ 1, 2, color });
+    pixels[2].push_back(Pixel{ 0, 2, color });
 
-    pixels[3].push_back(Pixel{ 0, 0, 2 });
-    pixels[3].push_back(Pixel{ 0, 1, 2 });
-    pixels[3].push_back(Pixel{ 1, 1, 2 });
-    pixels[3].push_back(Pixel{ 2, 1, 2 });
+    pixels[3].push_back(Pixel{ 0, 0, color });
+    pixels[3].push_back(Pixel{ 0, 1, color });
+    pixels[3].push_back(Pixel{ 1, 1, color });
+    pixels[3].push_back(Pixel{ 2, 1, color });
 }
 
 LTwoBrick::LTwoBrick(){
     offset_x = 4;
-    pixels[0].push_back(Pixel{ 1, 0, 8 });
-    pixels[0].push_back(Pixel{ 1, 1, 8 });
-    pixels[0].push_back(Pixel{ 1, 2, 8 });
-    pixels[0].push_back(Pixel{ 0, 0, 8 });
+    int color = 3;
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
+    pixels[0].push_back(Pixel{ 1, 2, color });
+    pixels[0].push_back(Pixel{ 0, 0, color });
 
-    pixels[1].push_back(Pixel{ 0, 1, 8 });
-    pixels[1].push_back(Pixel{ 1, 1, 8 });
-    pixels[1].push_back(Pixel{ 2, 1, 8 });
-    pixels[1].push_back(Pixel{ 2, 0, 8 });
+    pixels[1].push_back(Pixel{ 0, 1, color });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 2, 1, color });
+    pixels[1].push_back(Pixel{ 2, 0, color });
 
-    pixels[2].push_back(Pixel{ 1, 0, 8 });
-    pixels[2].push_back(Pixel{ 1, 1, 8 });
-    pixels[2].push_back(Pixel{ 1, 2, 8 });
-    pixels[2].push_back(Pixel{ 2, 2, 8 });
+    pixels[2].push_back(Pixel{ 1, 0, color });
+    pixels[2].push_back(Pixel{ 1, 1, color });
+    pixels[2].push_back(Pixel{ 1, 2, color });
+    pixels[2].push_back(Pixel{ 2, 2, color });
 
-    pixels[3].push_back(Pixel{ 0, 1, 8 });
-    pixels[3].push_back(Pixel{ 1, 1, 8 });
-    pixels[3].push_back(Pixel{ 2, 1, 8 });
-    pixels[3].push_back(Pixel{ 0, 2, 8 });
+    pixels[3].push_back(Pixel{ 0, 1, color });
+    pixels[3].push_back(Pixel{ 1, 1, color });
+    pixels[3].push_back(Pixel{ 2, 1, color });
+    pixels[3].push_back(Pixel{ 0, 2, color });
 }
 
 ZBrick::ZBrick(){
     offset_x = 3;
+    int color = 5;
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
+    pixels[0].push_back(Pixel{ 2, 1, color });
+    pixels[0].push_back(Pixel{ 2, 2, color });
 
-    pixels[0].push_back(Pixel{ 1, 0, 3 });
-    pixels[0].push_back(Pixel{ 1, 1, 3 });
-    pixels[0].push_back(Pixel{ 2, 1, 3 });
-    pixels[0].push_back(Pixel{ 2, 2, 3 });
-
-    pixels[1].push_back(Pixel{ 1, 1, 3 });
-    pixels[1].push_back(Pixel{ 1, 2, 3 });
-    pixels[1].push_back(Pixel{ 0, 2, 3 });
-    pixels[1].push_back(Pixel{ 2, 1, 3 });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 1, 2, color });
+    pixels[1].push_back(Pixel{ 0, 2, color });
+    pixels[1].push_back(Pixel{ 2, 1, color });
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
@@ -75,15 +78,16 @@ ZBrick::ZBrick(){
 
 ZTwoBrick::ZTwoBrick(){
     offset_x = 4;
-    pixels[0].push_back(Pixel{ 1, 0, 7 });
-    pixels[0].push_back(Pixel{ 0, 1, 7 });
-    pixels[0].push_back(Pixel{ 1, 1, 7 });
-    pixels[0].push_back(Pixel{ 0, 2, 7 });
+    int color = 7;
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 0, 1, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
+    pixels[0].push_back(Pixel{ 0, 2, color });
 
-    pixels[1].push_back(Pixel{ 0, 1, 7 });
-    pixels[1].push_back(Pixel{ 1, 1, 7 });
-    pixels[1].push_back(Pixel{ 1, 2, 7 });
-    pixels[1].push_back(Pixel{ 2, 2, 7 });
+    pixels[1].push_back(Pixel{ 0, 1, color });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 1, 2, color });
+    pixels[1].push_back(Pixel{ 2, 2, color });
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
@@ -92,15 +96,16 @@ ZTwoBrick::ZTwoBrick(){
 LineBrick::LineBrick(){
     offset_x = 3;
     offset_y = -2;
-    pixels[0].push_back(Pixel{ 0, 2, 4 });
-    pixels[0].push_back(Pixel{ 1, 2, 4 });
-    pixels[0].push_back(Pixel{ 2, 2, 4 });
-    pixels[0].push_back(Pixel{ 3, 2, 4 });
+    int color = 1;
+    pixels[0].push_back(Pixel{ 0, 2, color });
+    pixels[0].push_back(Pixel{ 1, 2, color });
+    pixels[0].push_back(Pixel{ 2, 2, color });
+    pixels[0].push_back(Pixel{ 3, 2, color });
 
-    pixels[1].push_back(Pixel{ 1, 0, 4 });
-    pixels[1].push_back(Pixel{ 1, 1, 4 });
-    pixels[1].push_back(Pixel{ 1, 2, 4 });
-    pixels[1].push_back(Pixel{ 1, 3, 4 });
+    pixels[1].push_back(Pixel{ 1, 0, color });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 1, 2, color });
+    pixels[1].push_back(Pixel{ 1, 3, color });
 
     pixels[2] = pixels[0];
     pixels[3] = pixels[1];
@@ -108,23 +113,24 @@ LineBrick::LineBrick(){
 
 TriBrick::TriBrick(){
     offset_x = 3;
-    pixels[0].push_back(Pixel{ 1, 0, 5 });
-    pixels[0].push_back(Pixel{ 1, 1, 5 });
-    pixels[0].push_back(Pixel{ 1, 2, 5 });
-    pixels[0].push_back(Pixel{ 2, 1, 5 });
+    int color = 6;
+    pixels[0].push_back(Pixel{ 1, 0, color });
+    pixels[0].push_back(Pixel{ 1, 1, color });
+    pixels[0].push_back(Pixel{ 1, 2, color });
+    pixels[0].push_back(Pixel{ 2, 1, color });
 
-    pixels[1].push_back(Pixel{ 0, 1, 5 });
-    pixels[1].push_back(Pixel{ 1, 2, 5 });
-    pixels[1].push_back(Pixel{ 1, 1, 5 });
-    pixels[1].push_back(Pixel{ 2, 1, 5 });
+    pixels[1].push_back(Pixel{ 0, 1, color });
+    pixels[1].push_back(Pixel{ 1, 2, color });
+    pixels[1].push_back(Pixel{ 1, 1, color });
+    pixels[1].push_back(Pixel{ 2, 1, color });
 
-    pixels[2].push_back(Pixel{ 1, 0, 5 });
-    pixels[2].push_back(Pixel{ 1, 1, 5 });
-    pixels[2].push_back(Pixel{ 1, 2, 5 });
-    pixels[2].push_back(Pixel{ 0, 1, 5 });
+    pixels[2].push_back(Pixel{ 1, 0, color });
+    pixels[2].push_back(Pixel{ 1, 1, color });
+    pixels[2].push_back(Pixel{ 1, 2, color });
+    pixels[2].push_back(Pixel{ 0, 1, color });
 
-    pixels[3].push_back(Pixel{ 0, 1, 5 });
-    pixels[3].push_back(Pixel{ 1, 0, 5 });
-    pixels[3].push_back(Pixel{ 1, 1, 5 });
-    pixels[3].push_back(Pixel{ 2, 1, 5 });
+    pixels[3].push_back(Pixel{ 0, 1, color });
+    pixels[3].push_back(Pixel{ 1, 0, color });
+    pixels[3].push_back(Pixel{ 1, 1, color });
+    pixels[3].push_back(Pixel{ 2, 1, color });
 }

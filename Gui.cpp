@@ -20,8 +20,8 @@ Gui::~Gui(){
 void Gui::draw(bool game_over){
 
     if(game_over){
-        DrawText("Game Over", 45, 80, 30, WHITE);
-        DrawText("Press any key to restart", 50, 150, 10, WHITE);
+        DrawTextCentered("Game Over", SCREEN_WIDTH / 4, 80, 35, WHITE);
+        DrawTextCentered("Press any key to restart", SCREEN_WIDTH / 4, 150, 15, WHITE);
     }
 
     DrawRectangle(0, 0 , PIXEL_SIZE, SCREEN_HEIGHT, DARKGRAY);
