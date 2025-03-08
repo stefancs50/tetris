@@ -22,4 +22,5 @@ protected:
     int brick_count = 0;
     int lines = 0;
     int score = 0;
+    void DrawTextCentered(const char *text, int posX, int posY, int fontSize, Color color);
 };

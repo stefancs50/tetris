@@ -53,7 +53,7 @@ void Core::draw()
     {
         for(int y = 0; y < height; y++)
         {
-            DrawRectangle(PIXEL_SIZE + x * PIXEL_SIZE + 1, y * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[grid[x][y]]);
+            DrawRectangle(PIXEL_SIZE + x * PIXEL_SIZE + 1, y * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[grid[x][y]]);   
         }
     }
     current_brick.draw();

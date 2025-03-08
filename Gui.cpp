@@ -24,18 +24,18 @@ void Gui::draw(bool game_over){
         DrawText("Press any key to restart", 50, 150, 10, WHITE);
     }
 
-    DrawRectangle(0, 0 , PIXEL_SIZE, SCREEN_HEIGHT, GREEN);
-    DrawRectangle(11 * PIXEL_SIZE , 0, PIXEL_SIZE , SCREEN_HEIGHT, GREEN);
+    DrawRectangle(0, 0 , PIXEL_SIZE, SCREEN_HEIGHT, DARKGRAY);
+    DrawRectangle(11 * PIXEL_SIZE , 0, PIXEL_SIZE , SCREEN_HEIGHT, DARKGRAY);
 
+    int center = SCREEN_WIDTH / 4 + SCREEN_WIDTH / 2;
 
-    int x = 300;
-    DrawText("Next:", x, 10, 20, WHITE);
-    DrawText("Brick count:", x, 150, 20, WHITE);
-    DrawText("Lines:", x, 200, 20, WHITE);
-    DrawText("Score:", x, 250, 20, WHITE);
-    DrawText(TextFormat("%d", brick_count), x, 170, 20, WHITE);
-    DrawText(TextFormat("%d", lines), x, 220, 20, WHITE);
-    DrawText(TextFormat("%d", score), x, 270, 20, WHITE);
+    DrawTextCentered("Next", center, 10, 20, WHITE);
+    DrawTextCentered("Brick count", center, 150, 20, WHITE);
+    DrawTextCentered("Lines:", center, 200, 20, WHITE);
+    DrawTextCentered("Score:", center, 250, 20, WHITE);
+    DrawTextCentered(TextFormat("%d", brick_count), center, 170, 20, WHITE);
+    DrawTextCentered(TextFormat("%d", lines), center, 220, 20, WHITE);
+    DrawTextCentered(TextFormat("%d", score), center, 270, 20, WHITE);
 }
 
 void Gui::increment_brick_count(){
@@ -55,4 +55,11 @@ void Gui::reset()
     lines = 0;
     score = 0;
     brick_count = 0;    
+}
+
+void Gui::DrawTextCentered(const char *text, int posX, int posY, int fontSize, Color color)
+{
+    int width = MeasureText(text, fontSize);
+    int centered = posX - width / 2;
+    DrawText(text, centered, posY, fontSize, color);
 }

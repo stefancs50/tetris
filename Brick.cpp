@@ -36,7 +36,9 @@ void Brick::draw_next_brick(bool undraw)
         }
     }else{
         for(Pixel p : getPixels()){
-            DrawRectangle((giu_x + offset_x + p.x) * PIXEL_SIZE + 1, (gui_y + offset_y + p.y) * PIXEL_SIZE + 1, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[p.color]);
+            int x = (giu_x + offset_x + p.x) * PIXEL_SIZE + 1;
+            int y = (gui_y + offset_y + p.y) * PIXEL_SIZE + 1;
+            DrawRectangle(x, y, PIXEL_SIZE - 1, PIXEL_SIZE - 1, Colors[p.color]);
         }
     }
 }
